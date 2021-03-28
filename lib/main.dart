@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:poolfrontend/config/palette.dart';
-import 'package:poolfrontend/screens/home.dart';
+import 'package:poolfrontend/screens/login.dart';
 import 'package:poolfrontend/screens/mainpage.dart';
 
 void main() => runApp(MyApp());
@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
         primaryColor: Palette.background,
         accentColor: Palette.red,
       ),
-      home: Home(),
+      home: Login(),
     );
   }
 }

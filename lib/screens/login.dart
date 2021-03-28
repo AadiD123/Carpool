@@ -37,130 +37,133 @@ class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Theme.of(context).primaryColor,
-        body: _isLoggedIn
-            ? Container(
-                padding: EdgeInsets.symmetric(horizontal: 40),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          "Welcome Back,",
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 28,
-                          ),
-                        ),
-                        Text(
-                          "Log In",
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 36,
-                          ),
-                        ),
-                      ],
-                    ),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.end,
-                      children: [
-                        Form(
-                          key: _formKey,
-                          child: Column(children: <Widget>[
-                            TextField(
-                              style: TextStyle(color: Colors.black),
-                              decoration: InputDecoration(
-                                fillColor: Colors.white,
-                                filled: true,
-                                hintText: 'Email',
-                                border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.all(
-                                    (Radius.circular(10.0)),
-                                  ),
-                                ),
-                              ),
-                            ),
-                            SizedBox(
-                              height: 10,
-                            ),
-                            TextField(
-                              style: TextStyle(color: Colors.black),
-                              decoration: InputDecoration(
-                                fillColor: Colors.white,
-                                filled: true,
-                                hintText: 'Password',
-                                border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.all(
-                                    (Radius.circular(10.0)),
-                                  ),
-                                ),
-                              ),
-                            )
-                          ]),
-                        ),
-                        TextButton(
-                          onPressed: () {},
-                          child: Text(
-                            "Forgot Password?",
-                            style: TextStyle(
-                              color: Colors.white,
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Container(
-                          width: 200,
-                          child: SignInButton("Log In", () {}),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.fromLTRB(100, 50, 100, 0),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Container(
-                                child: IconButton(
-                                  icon: Icon(
-                                    BrandIcons.google,
-                                    color: Colors.white,
-                                  ),
-                                  onPressed: _login,
-                                ),
-                                decoration: BoxDecoration(
-                                  shape: BoxShape.circle,
-                                  color: Colors.red[400],
-                                ),
-                              ),
-                              Container(
-                                child: IconButton(
-                                  icon: Icon(
-                                    BrandIcons.facebook,
-                                    color: Colors.white,
-                                  ),
-                                  onPressed: () {},
-                                ),
-                                decoration: BoxDecoration(
-                                  shape: BoxShape.circle,
-                                  color: Colors.blue[900],
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
+      backgroundColor: Theme.of(context).primaryColor,
+      body: Container(
+        padding: EdgeInsets.symmetric(horizontal: 40),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              child: Image.asset(
+                'assets/images/carpoollogo.jpeg',
+                width: 30.0,
+                height: 30.0,
+              ),
+            ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  "Welcome Back,",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 28,
+                  ),
                 ),
-              )
-            : Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => MainPage()),
-              ));
+                Text(
+                  "Log In",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 36,
+                  ),
+                ),
+              ],
+            ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                Form(
+                  key: _formKey,
+                  child: Column(children: <Widget>[
+                    TextField(
+                      style: TextStyle(color: Colors.black),
+                      decoration: InputDecoration(
+                        fillColor: Colors.white,
+                        filled: true,
+                        hintText: 'Email',
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(
+                            (Radius.circular(10.0)),
+                          ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    TextField(
+                      style: TextStyle(color: Colors.black),
+                      decoration: InputDecoration(
+                        fillColor: Colors.white,
+                        filled: true,
+                        hintText: 'Password',
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(
+                            (Radius.circular(10.0)),
+                          ),
+                        ),
+                      ),
+                    )
+                  ]),
+                ),
+                TextButton(
+                  onPressed: () {},
+                  child: Text(
+                    "Forgot Password?",
+                    style: TextStyle(
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  width: 200,
+                  child: SignInButton("Log In", () {}),
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(100, 50, 100, 0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Container(
+                        child: IconButton(
+                          icon: Icon(
+                            BrandIcons.google,
+                            color: Colors.white,
+                          ),
+                          onPressed: _login,
+                        ),
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: Colors.red[400],
+                        ),
+                      ),
+                      Container(
+                        child: IconButton(
+                          icon: Icon(
+                            BrandIcons.facebook,
+                            color: Colors.white,
+                          ),
+                          onPressed: () {},
+                        ),
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: Colors.blue[900],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }

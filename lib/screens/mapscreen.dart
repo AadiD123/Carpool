@@ -30,27 +30,30 @@ class _MapScreenState extends State<MapScreen> {
                       CameraUpdate.newLatLngBounds(geolocation.bounds, 0));
                 },
               ),
-              SizedBox(
-                height: 500,
-                child: GoogleMap(
-                  initialCameraPosition: CameraPosition(
-                    target: LatLng(47.6, -122.190),
-                    zoom: 14,
+              Padding(
+                padding: const EdgeInsets.only(top: 8.0),
+                child: SizedBox(
+                  height: 500,
+                  child: GoogleMap(
+                    initialCameraPosition: CameraPosition(
+                      target: LatLng(47.6, -122.190),
+                      zoom: 14,
+                    ),
+                    mapType: MapType.normal,
+                    compassEnabled: true,
+                    myLocationEnabled: true,
+                    zoomControlsEnabled: true,
+                    buildingsEnabled: true,
+                    myLocationButtonEnabled: true,
+                    minMaxZoomPreference: MinMaxZoomPreference(5, 30),
+                    mapToolbarEnabled: true,
+                    rotateGesturesEnabled: true,
+                    onMapCreated: (GoogleMapController googleMapController) {
+                      setState(() {
+                        mapController = googleMapController;
+                      });
+                    },
                   ),
-                  mapType: MapType.normal,
-                  compassEnabled: true,
-                  myLocationEnabled: true,
-                  zoomControlsEnabled: true,
-                  buildingsEnabled: true,
-                  myLocationButtonEnabled: true,
-                  minMaxZoomPreference: MinMaxZoomPreference(12, 20),
-                  mapToolbarEnabled: true,
-                  rotateGesturesEnabled: true,
-                  onMapCreated: (GoogleMapController googleMapController) {
-                    setState(() {
-                      mapController = googleMapController;
-                    });
-                  },
                 ),
               ),
             ],
