@@ -24,12 +24,7 @@ Widget getListView() {
       ),
       ListTile(
         title: Text("Sign up to be a driver"),
-        onTap: () {
-          // Navigator.push(
-          //   context,
-          //   MaterialPageRoute(builder: (context) => MainPage()),
-          // );
-        },
+        onTap: () {},
       ),
     ],
   );
